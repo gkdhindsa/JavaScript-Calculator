@@ -15,12 +15,12 @@ class Calculator{
     }
 
     appendNumber(number){
-        if(number==='.' && this.currentOperand.includes('.')) return
+        if(number === '.' && this.currentOperand.includes('.')) return
         this.currentOperand=   this.currentOperand.toString() + number.toString();
     }
     chooseOperator(operation){
 
-        if(this.currentOperand=='') return;
+        if(this.currentOperand == '') return;
         if(this.previousOperand!=='') 
         {
             this.compute();
@@ -49,6 +49,7 @@ class Calculator{
                 computation=prev*curr;
                 break;
             default:
+                console.log("check the program");
                 return;
         }
 
@@ -70,10 +71,6 @@ class Calculator{
     }
 
 }
-
-
-
-
 
 const numberButtons=document.querySelectorAll('[number]');
 const clear=document.querySelector('[all-clear]')
@@ -108,7 +105,7 @@ clear.addEventListener('click', button =>{
     calculator.clear();
     calculator.updateDisplay();
 });
-deletes.addEventListener('click', button =>{
+deletes.addEventListener('click', button => {
     calculator.delete();
     calculator.updateDisplay();
 });
